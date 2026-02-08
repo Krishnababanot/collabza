@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collabza | Future-Forward Growth Agency</title>
+    <link rel="stylesheet" href="website.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <!-- Background Grid -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow"></div>
+
+    <!-- Protocol Warning -->
+    <div id="protocol-warning"
+        style="display: none; background: #ff4444; color: white; text-align: center; padding: 1rem; position: fixed; top: 0; left: 0; width: 100%; z-index: 9999; font-weight: bold;">
+        ⚠️ You are running this file directly (file://). Google Auth and Animations will NOT work. Please run this on a
+        Local Server (e.g., VS Code Live Server).
+    </div>
+    <script>
+        if (window.location.protocol === 'file:') {
+            document.getElementById('protocol-warning').style.display = 'block';
+            console.error("CRITICAL: Running via file:// protocol. ES Modules blocked.");
+        }
+    </script>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">COLLABZ<span>A</span></a>
+
+            <div class="nav-links">
+                <a href="#work" class="nav-link">Work</a>
+                <a href="#process" class="nav-link">Process</a>
+                <a href="#portal" class="nav-link">Portal</a>
+                <a href="#contact" class="nav-link">Contact</a>
+
+                <!-- Auth UI -->
+                <div id="auth-ui">
+                    <button id="login-btn" class="cta-button" style="cursor: pointer; border: none;">Sign in with
+                        Google</button>
+
+                    <div id="user-profile" style="display: none; align-items: center; gap: 1rem;">
+                        <div class="user-info" style="display: flex; align-items: center; gap: 0.5rem;">
+                            <img id="user-pic" src="" alt="Profile"
+                                style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--primary-color);">
+                            <span id="user-name" style="font-weight: 600; color: #fff; font-size: 0.9rem;"></span>
+                        </div>
+                        <button id="logout-btn" class="secondary-button"
+                            style="padding: 0.4rem 1rem; font-size: 0.8rem;">Logout</button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="mobile-toggle" aria-label="Toggle Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="#work" class="mobile-link">Work</a>
+        <a href="#process" class="mobile-link">Process</a>
+        <a href="#portal" class="mobile-link">Portal</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="section hero-section">
+            <div class="container hero-container">
+                <div class="hero-content fade-in-up">
+                    <span class="badge">Future-Forward Growth Agency</span>
+                    <h1 class="hero-title">
+                        Collabza: We Don't Just <span class="gradient-text">Build Websites</span>;<br>
+                        We Scale <span class="glow-text">Empires.</span>
+                    </h1>
+                    <p class="hero-description">
+                        Revolutionizing the digital landscape with premium design, powerful engineering, and strategic
+                        growth that turns ambitious brands into market leaders.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="primary-button">
+                            Start Your Empire <i data-lucide="arrow-right"></i>
+                        </a>
+                        <a href="#work" class="secondary-button">View Our Arsenal</a>
+                    </div>
+                </div>
+
+                <!-- 3D CSS Animation Element -->
+                <div class="hero-visual">
+                    <div class="cube-container">
+                        <div class="cube">
+                            <div class="face front"></div>
+                            <div class="face back"></div>
+                            <div class="face right"></div>
+                            <div class="face left"></div>
+                            <div class="face top"></div>
+                            <div class="face bottom"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work / Services Section -->
+        <section id="work" class="section services-section">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <h2 class="section-title">The Arsenal</h2>
+                    <p class="section-subtitle">We equip our clients with high-end digital weaponry designed to dominate
+                        the competition.</p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Service 1 -->
+                    <div class="service-card glass-card fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="service-icon blue">
+                            <i data-lucide="code-2"></i>
+                        </div>
+                        <h3>Web Engineering</h3>
+                        <p>High-performance, scalable web applications built with the latest tech stack.</p>
+                        <div class="card-line"></div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="service-card glass-card fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="service-icon purple">
+                            <i data-lucide="rocket"></i>
+                        </div>
+                        <h3>Brand Strategy</h3>
+                        <p>Transforming identities into market leaders through data-driven branding and growth
+                            strategies.</p>
+                        <div class="card-line"></div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-card glass-card fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="service-icon indigo">
+                            <i data-lucide="palette"></i>
+                        </div>
+                        <h3>UI/UX Design</h3>
+                        <p>Immersive digital experiences that captivate users and drive unparalleled engagement.</p>
+                        <div class="card-line"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="section process-section">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <h2 class="section-title">The Process</h2>
+                    <p class="section-subtitle">From Zero to Launched. Our systematic approach to building empires.</p>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-line"></div>
+
+                    <!-- Step 1 -->
+                    <div class="process-step fade-in-up">
+                        <div class="step-content glass-card">
+                            <span class="step-number">01</span>
+                            <h3>Discovery & Strategy</h3>
+                            <p>We deep-dive into your brand's DNA to architect a domination strategy.</p>
+                        </div>
+                        <div class="step-marker"></div>
+                        <div class="step-spacer"></div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="process-step reverse fade-in-up">
+                        <div class="step-content glass-card">
+                            <span class="step-number">02</span>
+                            <h3>Design & User Experience</h3>
+                            <p>Crafting visual identities and interfaces that captivate and convert.</p>
+                        </div>
+                        <div class="step-marker"></div>
+                        <div class="step-spacer"></div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="process-step fade-in-up">
+                        <div class="step-content glass-card">
+                            <span class="step-number">03</span>
+                            <h3>Development & Engineering</h3>
+                            <p>Building robust, scalable foundations with bleeding-edge technology.</p>
+                        </div>
+                        <div class="step-marker"></div>
+                        <div class="step-spacer"></div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="process-step reverse fade-in-up">
+                        <div class="step-content glass-card">
+                            <span class="step-number">04</span>
+                            <h3>Launch & Growth</h3>
+                            <p>Deploying your empire and optimizing for explosive market entry.</p>
+                        </div>
+                        <div class="step-marker"></div>
+                        <div class="step-spacer"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portal Section -->
+        <section id="portal" class="section portal-section">
+            <div class="container portal-container">
+                <div id="portal-login-view" class="login-card glass-card fade-in-up">
+                    <div class="login-header">
+                        <h2>Client Portal</h2>
+                        <p>Access your empire's dashboard</p>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <button id="portal-login-btn" class="submit-button"
+                            style="display: inline-flex; width: auto; padding: 1rem 2rem;">
+                            <i data-lucide="log-in"></i> Sign in with Google
+                        </button>
+                        <p style="margin-top: 1.5rem; color: rgba(255,255,255,0.4); font-size: 0.9rem;">
+                            Authorized Personnel Only.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="portal-dashboard-view" class="login-card glass-card fade-in-up"
+                    style="display: none; text-align: center;">
+                    <div class="login-header">
+                        <h2>Welcome, <span id="portal-user-name">Commander</span></h2>
+                        <p>Your empire is growing.</p>
+                    </div>
+
+                    <div class="dashboard-stats"
+                        style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem;">
+                        <div class="stat-card"
+                            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--glass-border);">
+                            <h3 style="font-size: 2rem; color: var(--primary-color);">Active</h3>
+                            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6);">Project Status</p>
+                        </div>
+                        <div class="stat-card"
+                            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--glass-border);">
+                            <h3 style="font-size: 2rem; color: var(--secondary-color);">85%</h3>
+                            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6);">Completion</p>
+                        </div>
+                    </div>
+
+                    <button id="portal-logout-btn" class="secondary-button" style="margin-top: 2rem;">
+                        Sign Out
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container contact-container">
+                <div class="contact-text fade-in-up">
+                    <h1 class="hero-title">
+                        Launch Your <br>
+                        <span class="gradient-text">Mission.</span>
+                    </h1>
+                    <p class="hero-description">
+                        Ready to scale your empire? Fill out the form and our strategists will be in touch within 24
+                        hours.
+                    </p>
+                    <div class="contact-info">
+                        <p>Mumbai, India — Global HQ</p>
+                        <p>collabzaofficial@gmail.com</p>
+                        <a href="https://www.instagram.com/collabza/" target="_blank" class="instagram-link">
+                            <i data-lucide="instagram"></i> @collabza
+                        </a>
+                        <br>
+                        <a href="mailto:collabzaofficial@gmail.com" class="instagram-link" style="margin-top: 0.5rem;">
+                            <i data-lucide="mail"></i> Email Us
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper glass-card fade-in-up">
+                    <form class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Project Budget</label>
+                            <input type="text" id="budget-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea rows="4"></textarea>
+                        </div>
+
+                        <button type="button" id="send-btn" class="submit-button white">
+                            Send Inquiry <i data-lucide="send"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2024 Collabza. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/collabza/" target="_blank"><i data-lucide="instagram"></i></a>
+                <a href="#"><i data-lucide="twitter"></i></a>
+                <a href="#"><i data-lucide="linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="website.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
+
+</html>
